@@ -1,0 +1,22 @@
+def get_int():
+    userdata = input("Please Enter a positive number from 1 to 10 or type 'terminate' to exit: ")
+    if userdata == 'terminate':
+        print("IOT Assignment by Bibek Shrestha.Teacher- Drdla matej. **Have a good day**")
+        return None
+    try:
+        user_num = int(userdata)
+        if user_num < 0:
+            print("The number is not a positive number")
+            return (get_int())
+        elif user_num>10:
+            print("The number is out of range")
+            return (get_int())
+        else:
+            print("The entered number is:{}".format(user_num))
+            print(type(user_num))
+            return (get_int())
+    except ValueError:
+        print("Please enter an Integer")
+        print(type(userdata))
+        return(get_int())
+user_number = get_int()

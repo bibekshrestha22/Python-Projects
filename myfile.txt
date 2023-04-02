@@ -1,0 +1,17 @@
+def main():
+    #opening the file named iotassignment.txt in write mode.
+    f= open("iotassignment.txt","w")
+    for i in range(7):
+        f.write("This is line %d\r\n" % (i + 1))
+    #using for loop to print some lines of data on the file.
+    read = open("iotassignment.txt", "rt") #read text mode
+    read=open("iotassignment-copy.txt", "wt") #write text mode
+
+    for i in range(4):
+        read.write("This is an new line on a new file n.o %d\r\n" % (i + 1))
+        #writing new lines on new file using for loop.
+    f.close()
+    read.close()
+
+if __name__ == '__main__': main()
+

@@ -1,0 +1,30 @@
+def userinput():
+    print("***Welcome To Modulus Calculator***")
+    print("Please enter 'exit' to terminate the program or")
+    fnum = input("Please Enter the first positive number: ")
+
+    if fnum=='exit': #if the imput matches the string 'exit' it terminates the program
+        print("This is Assignment of IOT @KCGI. Thank you for using this program!!")
+        return None
+    snum = input("Please Enter the second positive number: ")
+    try:
+        secondnum=int(snum) #casting entered data to integer
+        firstnum = int(fnum) #casting entered data to integer
+        if firstnum <= 0 or secondnum<=0: #checking wheter the entered values are positive or not
+            print("One or both of the entered numbers were not positive numbers please enter positive number to continue")
+            return userinput()
+        else:
+            try:
+                print("Doing the Calculations")
+                mod = (firstnum % secondnum) #doing 1st num % (mod) 2second num i.e a%b
+                print("The modulus of the entered numbers is: {}".format(mod))
+                return userinput()
+
+            except ValueError:
+                print("Something is wrong")
+                return userinput()
+    except ValueError:
+        print("Please enter two integers to run the program") #if any other data type is entered the system shows error msg.
+        return userinput()
+
+userinput()

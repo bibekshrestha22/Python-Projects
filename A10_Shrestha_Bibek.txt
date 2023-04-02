@@ -1,0 +1,17 @@
+teacher = "     Prof.Drdla Matez     "
+
+x = teacher.rstrip() #removes all the white spaces at right side of the string
+
+print("Among all the teachers", x, "is my favorite")
+
+txt = "Bibek"
+
+x = txt.rjust(30) #it returns a 30 character long right justified version of the string.
+
+print(x, "is my first name")
+
+txt = "I am bibek shrestha. I am a student at kcgi"
+
+x = txt.partition("bibek") #The partition() method searches for a specified string, and splits the string into a tuple containing three elements.
+
+print(x)

@@ -1,0 +1,30 @@
+def userinput():
+    print("This is Week 9 Exceptions Assignment")
+    print("Please enter 'terminate' to terminate the program or")
+    fnum = input("Please Enter the first positive number: ")
+
+
+    if fnum == 'terminate': #if the imput matches the string 'terminate' it terminates the program.
+        print("This is Assignment of IOT @KCGI. Thank you for using this program!!")
+        return None
+    snum  = input("Please Enter the second positive number: ")
+    try:
+        secondnum=int(snum) #casting entered data to integer
+        firstnum = int(fnum) #casting entered data to integer
+        if firstnum <= 0 or secondnum<=-1: #checking wheter the entered values are greater or equal to one.
+            print("One or both of the entered numbers were not positive numbers please enter positive number to continue")
+            return userinput()
+        else:
+            try:
+                print("Doing the Calculations")
+                mod = (firstnum / secondnum) #dividing 1st num with 2nd
+                print("The divided value is : {}".format(mod))
+                return userinput()
+
+            except ZeroDivisionError:
+                print("***LOL This is Zero Division Error***")
+                return userinput()
+    except ValueError:
+        print("*** WOW! I caught a value error here***") #if any other data type is entered the system shows error msg.
+        return userinput()
+userinput()

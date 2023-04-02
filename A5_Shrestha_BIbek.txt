@@ -1,0 +1,36 @@
+def oddcal():
+    print("***Odd Position Multiplier***")
+    print("Please enter 'exit' to terminate the program or")
+    inputnum = input("Please enter a number to calculte odd multiplication")
+    if inputnum == 'terminate':
+        print("IOT Assignment by Bibek Shrestha.Teacher- Drdla matej. **Have a good day**")
+        return None
+    try:
+        inputnum = int(inputnum)
+        while (inputnum > 0 ):
+            blist = []
+            for i in str(inputnum):
+                blist.append(i)
+
+
+            for i in range(0, len(blist)):
+                blist[i] = int(blist[i])
+
+            print ("The number you have entered is : " + str(blist))
+
+            oddproduct = 1
+            blist.reverse()
+            print(blist)
+            blist = blist[0::2]
+            blist = [i for i in blist if i != 0]
+            print("Odd Values after ignoring zero"+str(blist))
+
+            for x in blist: oddproduct = oddproduct * x
+            print("The product of odd indexed items is: {}".format(oddproduct))
+            n = len(blist)
+            break
+    except ValueError:
+        print("Please enter an integer")
+        return oddcal()
+    return oddcal()
+inputnum = oddcal()
